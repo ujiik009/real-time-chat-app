@@ -1,11 +1,19 @@
 import { useState } from 'react';
 import "./index.css"
+import { useNavigate } from "react-router-dom";
 export default function LoginPage() {
-    var [username,setUsername] = useState("")
-    var [password,setPassword] = useState("")
 
-    var loginAction = ()=>{
-        alert(username+" "+password)
+    let navigate = useNavigate();
+
+    var [username, setUsername] = useState("")
+    var [password, setPassword] = useState("")
+
+    var loginAction = () => {
+        alert(username + " " + password)
+    }
+
+    var goSignUp = ()=> {
+        navigate(`/signup`);
     }
 
     return (
@@ -19,14 +27,25 @@ export default function LoginPage() {
 
             {/* input box */}
             <div style={{
-                marginTop:50
+                marginTop: 50,
+                width:400
             }}>
-                <input type="text" value={username} onChange={e => setUsername(e.target.value)} className="input-custom"/>
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="input-custom"/>
-                <button className="btn-custom" onClick={loginAction}>Login</button>
+                <input type="text" placeholder='email or username' value={username} onChange={e => setUsername(e.target.value)} className="input-custom" />
+                <input type="password" placeholder='password' value={password} onChange={e => setPassword(e.target.value)} className="input-custom" />
+                
+                <div id='box-create-account'>
+                    <div id='remember'>
+                        <input className='checkbox-custom' type={'checkbox'} />
+                        <div style={{color:'#ffffff'}}>Remember me</div>
+                    </div>
+                    <div style={{color:'#68D886',cursor:'pointer'}} onClick={goSignUp}>Create new Account</div>
+                </div>
+
+                <button className="btn-custom" style={{marginLeft:4}} onClick={loginAction}>Login</button>
             </div>
-            
+
             {/* input box */}
+
 
 
             {/* footer box */}
