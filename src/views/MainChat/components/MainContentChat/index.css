@@ -1,0 +1,19 @@
+
+#main-content-chat {
+    height: 100%;
+    background-color: #FCFDFD;
+    flex: 80;
+    position: relative;
+    
+}
+
+#chat-input-zone {
+    height: 50px;
+    background-color: rgb(84, 84, 119);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+}

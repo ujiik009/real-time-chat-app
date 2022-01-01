@@ -9,7 +9,8 @@ function SignUpPage() {
     var [password, setPassword] = useState("")
 
     var signUpAction = () => {
-        alert(username + " " + password)
+        console.log({firstName,lastName,username,email,password});
+        
     }
 
     var goLogin = ()=>{
